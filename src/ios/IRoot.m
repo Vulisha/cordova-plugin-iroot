@@ -323,16 +323,7 @@ enum {
 // Inaccessible Files Check
 - (int)inaccessibleFilesCheck {
     @try {
-        // Run through the array of files
-        for (NSString *key in HIDDENFILES) {
-            // Check if any of the files exist (should return no)
-            if ([[NSFileManager defaultManager] fileExistsAtPath:key]) {
-                // Jailbroken
-                return KFIFC;
-            }
-        }
-
-        // Shouldn't get this far, return jailbroken
+		// fake positive
         return NOTJAIL;
     }
     @catch (NSException *exception) {
